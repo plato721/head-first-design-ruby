@@ -13,6 +13,15 @@ RSpec.shared_examples "an observer" do
       observer.update(observable)
     }.to_not raise_error
   end
+
+  it "adds itself" do
+    observable = double(:observable)
+    allow(observable).to receive(:add_observer)
+
+    observer = described_class.new(observable)
+
+    expect(observable).to have_received(:add_observer).with(observer)
+  end
 end
 
 RSpec.shared_examples "a subject" do
