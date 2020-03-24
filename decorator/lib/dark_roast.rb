@@ -5,5 +5,5 @@ class DarkRoast
 
   def base_cost; 0.99; end
 
-  def description; "Dark roast"; end
+  def description; "Dark Roast Coffee"; end
 end

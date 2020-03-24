@@ -13,7 +13,7 @@ module Beverage
   end
 
   def description
-    description = base_description + @beverage.description if @beverage
+    description = "#{@beverage.description}, #{base_description}" if @beverage
     description || base_description
   end
 end

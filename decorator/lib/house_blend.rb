@@ -5,5 +5,5 @@ class HouseBlend
 
   def base_cost; 0.89; end
 
-  def description; "House blend"; end
+  def description; "House Blend Coffee"; end
 end
