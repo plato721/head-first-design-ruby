@@ -19,4 +19,8 @@ shared_examples "an ingredient factory" do
   it "has clam" do
     expect(subject.clam.is_a? Clam).to be_truthy
   end
+
+  it "has pepperoni" do
+    expect(subject.pepperoni.is_a? Pepperoni).to be_truthy
+  end
 end
