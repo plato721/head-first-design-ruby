@@ -4,6 +4,10 @@ require './lib/clam_pizza'
 require './lib/veggie_pizza'
 
 class PizzaStore
+  def initialize
+    raise "Treat as abstract (subclass this)"
+  end
+
   def order_pizza(type)
     pizza = create_pizza(type.downcase)
     pizza.prepare
