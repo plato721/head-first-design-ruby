@@ -1,10 +1,13 @@
 class ChocolateBoiler
-  @@instance
+  @@instance_mutex = Mutex.new
+  @@instance = nil
 
   private_class_method :new
 
   def self.instance
-    @@instance ||= new
+    @@instance ||= @@instance_mutex.synchronize do
+      @@instance ||= new
+    end
   end
 
   def initialize
