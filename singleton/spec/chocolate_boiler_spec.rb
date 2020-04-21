@@ -36,10 +36,25 @@ describe ChocolateBoiler do
     expect(boiler).to_not be_boiled
   end
 
+  it "will not be boiled after filled if filled called when empty" do
+    boiler = described_class.instance
+    boiler.instance_variable_set(:@filled, false)
+    boiler.instance_variable_set(:@boiled, true)
+
+    boiler.fill
+
+    expect(boiler).to be_full
+    expect(boiler).to_not be_boiled
+  end
+
   it "will drain upon boiling" do
     boiler = described_class.instance
+    boiler.instance_variable_set(:@filled, false)
+    boiler.instance_variable_set(:@boiled, false)
+
     boiler.fill
     boiler.boil
+
     expect(boiler).to be_empty
     expect(boiler).to be_boiled
   end

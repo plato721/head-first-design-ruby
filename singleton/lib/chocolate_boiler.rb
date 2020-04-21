@@ -15,16 +15,26 @@ class ChocolateBoiler
     @boiled = false
   end
 
-  def empty?
-    !@filled
-  end
-
   def drain
     @filled = false
   end
 
   def fill
-    @filled = true
+    if !@filled
+      @boiled = false
+      @filled = true
+    end
+  end
+
+  def boil
+    return unless full? && !boiled?
+
+    @boiled = true
+    drain
+  end
+
+  def empty?
+    !@filled
   end
 
   def full?
@@ -33,12 +43,5 @@ class ChocolateBoiler
 
   def boiled?
     @boiled
-  end
-
-  def boil
-    if !boiled? && full?
-      @filled = false
-      @boiled = true
-    end
   end
 end
