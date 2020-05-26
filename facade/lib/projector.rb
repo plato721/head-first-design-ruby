@@ -6,10 +6,12 @@ class Projector
   end
 
   def turn_on
+    puts "Turning projector on"
     @on = true
   end
 
   def turn_off
+    puts "Turning projector off"
     @on = false
   end
 

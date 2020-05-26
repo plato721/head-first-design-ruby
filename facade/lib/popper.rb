@@ -5,6 +5,10 @@ class Popper
     @on = true
   end
 
+  def turn_off
+    @on = false
+  end
+
   def on?
     self.on
   end
@@ -14,6 +18,6 @@ class Popper
   end
 
   def pop
-    "Popping the corn!"
+    puts "Popping the corn!"
   end
 end

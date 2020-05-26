@@ -19,11 +19,11 @@ class DvdPlayer
 
   def play(movie)
     @movie = movie
-    "Playing movie #{movie}"
+    puts "Playing movie #{movie}"
   end
 
   def eject
-    "Ejecting movie #{movie}"
+    puts "Ejecting movie #{movie}"
     @movie = nil
   end
 end

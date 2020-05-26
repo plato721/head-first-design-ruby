@@ -92,15 +92,75 @@ RSpec.describe HomeTheaterFacade do
     end
 
     it "turns dvd on" do
-      expect(facade.amp).to_not be_on
+      expect(facade.dvd).to_not be_on
       facade.watch_movie("Knights of the triangle")
-      expect(facade.amp).to be_on
+      expect(facade.dvd).to be_on
     end
 
     it "plays movie on dvd" do
       expect(facade.dvd.movie).to_not match /dark/i
       facade.watch_movie("Something something dark side")
       expect(facade.dvd.movie).to eq("Something something dark side")
+    end
+  end
+
+  context "#end_movie" do
+    before do
+      facade.watch_movie("Something something dark side")
+    end
+
+    it "turns off the popper" do
+      expect(facade.popper).to be_on
+      facade.end_movie
+      expect(facade.popper).to be_off
+    end
+
+    it "dims lights to 10" do
+      expect(facade.lights.dim_level).to eql(10)
+
+      facade.end_movie
+      expect(facade.lights.dim_level).to eql(90)
+    end
+
+    it "raises the screen" do
+      expect(facade.screen).to be_down
+
+      facade.end_movie
+
+      expect(facade.screen).to_not be_down
+      expect(facade.screen).to be_up
+    end
+
+    it "turns the projector off" do
+      expect(facade.projector).to be_on
+      facade.end_movie
+      expect(facade.projector).to be_off
+    end
+
+    it "turns the amp off" do
+      expect(facade.amp).to be_on
+      facade.end_movie
+      expect(facade.amp).to be_off
+    end
+
+    it "ejects dvd" do
+      dvd = double(:dvd)
+      these_components = components.merge({dvd: dvd})
+      facade = facade(these_components)
+
+      allow(dvd).to receive(:turn_off)
+      allow(dvd).to receive(:eject)
+
+      facade.end_movie
+
+      expect(dvd).to have_received(:turn_off)
+      expect(dvd).to have_received(:eject)
+    end
+
+    it "turns dvd off" do
+      expect(facade.dvd).to be_on
+      facade.end_movie
+      expect(facade.dvd).to_not be_on
     end
   end
 end

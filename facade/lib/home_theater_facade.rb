@@ -26,4 +26,19 @@ class HomeTheaterFacade
     dvd.turn_on
     dvd.play(movie)
   end
+
+  def end_movie
+    puts("Shutting movie theater down...")
+    popper.turn_off
+
+    # could make it all complicated and create a house lights or something,
+    # but we'll just turn them up to 90
+    lights.dim(90)
+
+    screen.raise_up
+    projector.turn_off
+    amp.turn_off
+    dvd.eject
+    dvd.turn_off
+  end
 end

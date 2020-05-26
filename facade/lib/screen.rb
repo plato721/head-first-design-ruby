@@ -6,10 +6,12 @@ class Screen
   end
 
   def lower
+    puts "Lowering the screen"
     @screen_level = "down"
   end
 
-  def raise
+  def raise_up
+    puts "Raising the screen"
     @screen_level = "up"
   end
 
