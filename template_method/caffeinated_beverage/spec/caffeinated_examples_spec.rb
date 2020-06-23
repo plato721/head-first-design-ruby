@@ -4,6 +4,7 @@ RSpec.shared_examples "a caffeinated beverage" do
   end
 
   it "prepares" do
+    allow(subject).to receive(:condiments_wanted?){ true }
     expect{
       subject.prepare
     }.to_not raise_error
