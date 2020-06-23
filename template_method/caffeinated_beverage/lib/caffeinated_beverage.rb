@@ -7,7 +7,7 @@ class CaffeinatedBeverage
     boil
     brew
     pour
-    add_condiments
+    add_condiments if condiments_wanted?
   end
 
   def boil
@@ -24,5 +24,9 @@ class CaffeinatedBeverage
 
   def add_condiments
     raise "Must implement in subclass"
+  end
+
+  def condiments_wanted?
+    true
   end
 end

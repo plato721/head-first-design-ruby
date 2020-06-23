@@ -32,4 +32,20 @@ RSpec.shared_examples "a caffeinated beverage" do
       subject.add_condiments
     }.to_not raise_error
   end
+
+  context "add condiments as hook" do
+    it "does not add condiments if not wanted" do
+      allow(subject).to receive(:condiments_wanted?){ false }
+      allow(subject).to receive(:add_condiments).and_call_original
+      subject.prepare
+      expect(subject).to_not have_received(:add_condiments)
+    end
+
+    it "adds condiments if wanted" do
+      allow(subject).to receive(:condiments_wanted?){ true }
+      allow(subject).to receive(:add_condiments).and_call_original
+      subject.prepare
+      expect(subject).to have_received(:add_condiments)
+    end
+  end
 end
