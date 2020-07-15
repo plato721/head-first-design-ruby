@@ -7,15 +7,15 @@ class MenuComponent
     raise NotImplementedError
   end
 
-  def add
+  def add(item)
     raise NotImplementedError
   end
 
-  def remove
+  def remove(item)
     raise NotImplementedError
   end
 
-  def get_child
+  def get_child(n)
     raise NotImplementedError
   end
 
