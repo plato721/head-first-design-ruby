@@ -6,7 +6,7 @@ Dir['./lib/**/*.rb'].each{ |f| require f }
 describe "Restaurant Demo" do
   seeder = Seeder.new
   root_menu = seeder.seed
-
+  # require'pry';binding.pry
   # waitress = Waitress.new(root_menu)
   # waitress.print_all
   # waitress.print_items("vegetarian")

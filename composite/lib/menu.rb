@@ -3,11 +3,16 @@ require './lib/menu_component'
 class Menu < MenuComponent
   attr_reader :name, :description
 
-  def self.from_yaml(record_hash)
-    new(
-        name: record_hash.first.first,
-        description: record_hash["description"]
+  def self.from_yaml(record_hash, menu=nil)
+    new_menu = self.new(
+        name: record_hash["name"],
+        description: record_hash["description"],
     )
+    menu.add(new_menu) if menu
+    record_hash["items"].each do |raw_menu_component|
+      MenuComponent.from_yaml(raw_menu_component, new_menu)
+    end
+    new_menu
   end
 
   def initialize(name:, description:)

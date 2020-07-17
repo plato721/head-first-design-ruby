@@ -1,4 +1,12 @@
 class MenuComponent
+  def self.from_yaml(record, menu=nil)
+    if Array(record["items"]).length > 0 || record["type"] == "menu"
+      Menu
+    else
+      MenuItem
+    end.from_yaml(record, menu)
+  end
+
   def name
     raise NotImplementedError
   end
