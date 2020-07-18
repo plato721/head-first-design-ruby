@@ -6,8 +6,14 @@ Dir['./lib/**/*.rb'].each{ |f| require f }
 describe "Restaurant Demo" do
   seeder = Seeder.new
   root_menu = seeder.seed
-  # require'pry';binding.pry
-  # waitress = Waitress.new(root_menu)
-  # waitress.print_all
-  # waitress.print_items("vegetarian")
+
+  fh = File.open('./spec/java_demo_output.txt')
+  expected = fh.read
+
+  waitress = Waitress.new(root_menu)
+  full_menu = waitress.print_all
+  vegetarian_menu = waitress.print_items(->(item){ item.vegetarian? })
+  combined = full_menu + "\n\n" + vegetarian_menu
+
+  expect(combined).to eq(expected)
 end
