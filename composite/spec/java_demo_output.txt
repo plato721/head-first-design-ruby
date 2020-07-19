@@ -1,3 +1,4 @@
+
 Unified Menu: Welcome to the restaurant
 -------------------------
 
@@ -32,7 +33,7 @@ Steakhouse: First come, first steaked
    T-Bone, 40.0
       -- A boneless, skinless, cutlet... What do you think it is? It's a steak. With a bone in it. That resembles a T.
 
-Dessert: If you want to poision yourself with this, we'll accept payment for it.
+Dessert: If you want to poison yourself with this, we'll accept payment for it.
 -------------------------
    Cake, 5.99
       -- You've seen cake, right?
@@ -44,8 +45,7 @@ Dessert: If you want to poision yourself with this, we'll accept payment for it.
 
 
 Vegetarian menu
--------------------
-
+-------------------------
    K&B's Pancake Breakfast(v), 2.99
       -- Pancakes with scrambled eggs and toast
    Pancakes and gravy(v), 7.49

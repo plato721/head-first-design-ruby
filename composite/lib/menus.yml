@@ -1,5 +1,5 @@
 ---
-name: Full Menu
+name: Unified Menu
 type: menu
 description: Welcome to the restaurant
 items:
@@ -19,15 +19,16 @@ items:
     price: 7.49
     description: It's not really gravy. It's like a sugar tar. That's also not tar. It'll make your heart beat fast and your skin break out, what's not to love?
   - name: A pancake beyond
+    vegetarian: yessum
     price: 19.99
     description: Our beyond beef pancake. The pancake that isn't a pancake or a cow!
 - name: Diner
-  description: Why is it that the spoon is always greasy
+  description: Why is it that the spoon is always greasy?
   type: menu
   items:
   - name: Grand Royale
     price: 13.99
-    descritpion: A large important. A very enormous. Gigantic big big.
+    description: A large important. A very enormous. Gigantic big big.
   - name: Skinny Phil
     price: 8.99
     description: Dry chicken breast, squeeze of lemon, oregano for some reason, distilled water with added asphalt particulate.

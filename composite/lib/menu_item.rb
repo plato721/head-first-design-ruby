@@ -26,8 +26,13 @@ class MenuItem < MenuComponent
   end
 
   def print
-    "#{name}".ljust(15, '.') + "#{price}".rjust(5, '.') +
-        ("\n-" * 20) +
-        "#{description}"
+    "   #{display_name}, #{price}\n" +
+        "      -- #{description}\n"
+  end
+
+  private
+
+  def display_name
+    name + (vegetarian? ? "(v)" : "")
   end
 end

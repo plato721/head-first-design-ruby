@@ -22,12 +22,10 @@ class Menu < MenuComponent
   end
 
   def print
-    output = "#{name}: #{description}\n----------------"
-    items.each do |item|
+    output = ["\n#{name}: #{description}\n-------------------------\n"]
+    items.each_with_object(output) do |item, output|
       output << item.print
-      output << "\n"
-    end
-    output
+    end.join
   end
 
   def add(item)
@@ -50,7 +48,7 @@ class Menu < MenuComponent
   attr_reader :items
 
   def child_exist?(n)
-    return false if !(n.is_a? Numeric)
+    return false unless n.is_a?(Numeric)
 
     n >= 0 && n < items.length
   end
