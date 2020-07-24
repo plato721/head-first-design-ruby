@@ -1,0 +1,69 @@
+---
+name: Unified Menu
+type: menu
+description: Welcome to the restaurant
+items:
+- name: Pancake House Menu
+  type: menu
+  description: Breakfast things
+  items:
+  - name: K&B's Pancake Breakfast
+    vegetarian: true
+    price: 2.99
+    description: Pancakes with scrambled eggs and toast
+  - name: Death by pancakes
+    price: 13.99
+    description: Ugh. Another boring menu item name. Should I say that it will literally kill you? Of course not. Because you'd be expecting that, too.
+  - name: Pancakes and gravy
+    vegetarian: true
+    price: 7.49
+    description: It's not really gravy. It's like a sugar tar. That's also not tar. It'll make your heart beat fast and your skin break out, what's not to love?
+  - name: A pancake beyond
+    vegetarian: yessum
+    price: 19.99
+    description: Our beyond beef pancake. The pancake that isn't a pancake or a cow!
+- name: Diner
+  description: Why is it that the spoon is always greasy?
+  type: menu
+  items:
+  - name: Grand Royale
+    price: 13.99
+    description: A large important. A very enormous. Gigantic big big.
+  - name: Skinny Phil
+    price: 8.99
+    description: Dry chicken breast, squeeze of lemon, oregano for some reason, distilled water with added asphalt particulate.
+  - name: Your Mom
+    price: 10.5
+    description: "'You want my mom??'' 'No, Your Mom.'' 'That's what I said!'"
+  - name: Your Sister
+    vegetarian: true
+    price: 11.99
+    description: Really? You have a Your Mom and a Your Sister? Yes. This is not a mature diner.
+- name: Steakhouse
+  description: First come, first steaked
+  type: menu
+  items:
+  - name: Porterhouse
+    price: 55.0
+    description: It's a house large enough to warrant having a porter on staff.
+  - name: Beyond Porterhouse
+    vegetarian: true
+    price: 75.0
+    description: If you're a vegetarian, would you really order this? Or just get some baby corns from the salad bar?
+  - name: T-Bone
+    price: 40.0
+    description: A boneless, skinless, cutlet... What do you think it is? It's a steak. With a bone in it. That resembles a T.
+  - name: Dessert
+    description: If you want to poison yourself with this, we'll accept payment for it.
+    type: menu
+    items:
+    - name: Cake
+      price: 5.99
+      description: You've seen cake, right?
+    - name: Apple Pie
+      price: 4.99
+      description: Third base? Gross.
+    - name: Cheesecake
+      vegetarian: true
+      price: 5.49
+      description: If you want something a bit sour, to allow you to ingest more sugar.
