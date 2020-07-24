@@ -27,7 +27,7 @@ class MenuComponent
     raise NotImplementedError
   end
 
-  def create_iterator
+  def create_enumerable
     []
   end
 

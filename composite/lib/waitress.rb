@@ -10,7 +10,7 @@ class Waitress
   end
 
   def print_where(proc)
-    _all_items_where(proc, root_menu.enumerable).flatten.compact.join("")
+    _all_items_where(proc, root_menu.create_enumerable).flatten.compact.join("")
   end
 
   private
@@ -19,7 +19,7 @@ class Waitress
       if menu_component.is_a? MenuItem
         menu_component.print if proc.call(menu_component)
       else
-        _all_items_where(proc, menu_component.enumerable)
+        _all_items_where(proc, menu_component.create_enumerable)
       end
     end
   end

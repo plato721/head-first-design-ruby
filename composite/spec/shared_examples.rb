@@ -8,7 +8,7 @@ RSpec.shared_examples "a menu component"  do |component|
   end
 
   it "responds to the root methods" do
-    [:add, :remove, :get_child, :create_iterator].each do |method|
+    [:add, :remove, :get_child, :create_enumerable].each do |method|
       expect(subject).to respond_to(method)
     end
   end

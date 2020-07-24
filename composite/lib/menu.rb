@@ -40,7 +40,7 @@ class Menu < MenuComponent
     @items[n] if child_exist?(n)
   end
 
-  def enumerable
+  def create_enumerable
     items.clone
   end
 

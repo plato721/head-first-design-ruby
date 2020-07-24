@@ -34,17 +34,17 @@ describe Menu do
       )
 
       @menu.add(item)
-      expect(@menu.enumerable).to include(item)
+      expect(@menu.create_enumerable).to include(item)
 
       @menu.remove(item)
-      expect(@menu.enumerable).to_not include(item)
+      expect(@menu.create_enumerable).to_not include(item)
     end
 
     it "provides an enumerable" do
       expect(@items.length).to eq(3)
-      expect(@menu.enumerable).to match_array(@items)
+      expect(@menu.create_enumerable).to match_array(@items)
       [:all?, :each, :select].each do |method|
-        expect(@menu.enumerable).to respond_to(method)
+        expect(@menu.create_enumerable).to respond_to(method)
       end
     end
 
