@@ -43,4 +43,9 @@ class GumballMachine
   def release_gumball
     @count -= 1
   end
+
+  def fill(count)
+    @count += count
+    @state.fill
+  end
 end

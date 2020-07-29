@@ -22,4 +22,20 @@ describe GumballMachine do
       expect([49,48]).to include(gm.count)
     end
   end
+
+  context "refilling the machine" do
+    it "transitions from sold out to no quarter if a gumball added" do
+      gm = described_class.new(0)
+      expect(gm.state).to be_a(SoldOut)
+
+      gm.fill(1)
+      expect(gm.state).to be_a(NoQuarter)
+    end
+
+    it "is still sold out if 0 gumballs were added" do
+      gm = described_class.new(0)
+      gm.fill(0)
+      expect(gm.state).to be_a(SoldOut)
+    end
+  end
 end
