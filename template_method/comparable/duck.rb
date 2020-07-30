@@ -7,8 +7,6 @@ class Duck
   end
 
   def <=>(other)
-    return -1 if weight < other.weight
-    return 1 if weight > other.weight
-    0
+    weight <=> other.weight
   end
 end
