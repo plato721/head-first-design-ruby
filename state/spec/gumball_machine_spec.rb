@@ -38,4 +38,36 @@ describe GumballMachine do
       expect(gm.state).to be_a(SoldOut)
     end
   end
+
+  context "double dispense winner" do
+    it "dispenses two gumballs around 10% of the time" do
+      cranks = 0
+      dispenses = 0
+
+      gm = described_class.new(10_000)
+      5000.times do
+        initial_balls = gm.count
+
+        gm.state = gm.has_quarter # house money baby!
+        gm.turn_crank
+
+        cranks += 1
+        dispenses += (initial_balls - gm.count)
+      end
+
+      double_dispense_percentage = (dispenses - cranks) / cranks.to_f
+      expect(double_dispense_percentage).to be_within(0.01).of(0.1)
+    end
+
+    it "won't dispense under zero" do # which means we must have 2, so that we can dispense 2
+      gm = described_class.new(1)
+      expect(gm.insert_quarter).to be_falsey
+
+      gm = described_class.new(2)
+      gm.insert_quarter
+      gm.turn_crank
+
+      expect(gm.insert_quarter).to be_falsey
+    end
+  end
 end

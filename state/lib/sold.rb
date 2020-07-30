@@ -9,7 +9,7 @@ class Sold
 
   def dispense
     @gumball_machine.release_gumball
-    @gumball_machine.state = if @gumball_machine.count > 0
+    @gumball_machine.state = if @gumball_machine.count > @gumball_machine.class::MINIMUM_SELLABLE
                                @gumball_machine.no_quarter
                              else
                                @gumball_machine.sold_out

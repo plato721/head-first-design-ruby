@@ -9,8 +9,12 @@ class HasQuarter
     @gumball_machine = gumball_machine
   end
 
+  def winner?
+    [*1..10].shuffle.shuffle.sample == 7
+  end
+
   def turn_crank
-    gumball_machine.state = gumball_machine.sold
+    gumball_machine.state = winner? ? gumball_machine.winner : gumball_machine.sold
   end
 
   def eject_quarter

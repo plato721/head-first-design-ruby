@@ -4,8 +4,10 @@ require './lib/has_quarter'
 require './lib/sold_out'
 
 class GumballMachine
-  attr_reader :count, :no_quarter, :has_quarter, :sold, :sold_out
+  attr_reader :count, :no_quarter, :has_quarter, :sold, :sold_out, :winner
   attr_accessor :state
+
+  MINIMUM_SELLABLE = 2
 
   def initialize(gumball_count)
     @count = gumball_count
@@ -18,10 +20,11 @@ class GumballMachine
     @no_quarter = NoQuarter.new(self)
     @has_quarter = HasQuarter.new(self)
     @sold = Sold.new(self)
+    @winner = Winner.new(self)
   end
 
   def set_initial_state
-    @state = count > 0 ? no_quarter : sold_out
+    @state = count >= MINIMUM_SELLABLE ? no_quarter : sold_out
   end
 
   def insert_quarter
