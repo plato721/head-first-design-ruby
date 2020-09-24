@@ -7,6 +7,7 @@ class DuckSimulator
     ducks = [MallardDuck, DecoyDuck, DarkwingDuck, DuckCall, RubberDuck]
 
     ducks.map!{ |duck_type| duck_type.new }
+    ducks << GooseAdapter.new(Goose.new)
 
     ducks.each { |duck| puts duck.quack }
   end
