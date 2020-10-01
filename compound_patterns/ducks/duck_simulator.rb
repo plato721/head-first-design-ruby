@@ -3,20 +3,20 @@
 Dir['./lib/**/*.rb'].each { |f| require f}
 
 class DuckSimulator
-  def perform
-    ducks = [MallardDuck, DecoyDuck, DarkwingDuck, DuckCall, RubberDuck]
+  def initialize(duck_factory=nil)
+    @duck_factory = duck_factory
+    @duck_factory ||= QuackCounterFactory.new
+  end
 
-    ducks.map!{ |duck_type| count_wrap(duck_type.new) }
+  def perform
+    ducks = ["mallard_duck", "decoy_duck", "darkwing_duck", "rubber_duck"]
+
+    ducks.map!{ |duck_type| @duck_factory.send("create_#{duck_type}".to_sym) }
     ducks << GooseAdapter.new(Goose.new)
 
     ducks.each { |duck| puts duck.quack }
 
     puts "Total quacks: #{QuackCounter.quack_count}"
-  end
-
-  private
-  def count_wrap(duck)
-    QuackCounter.new(duck)
   end
 end
 
