@@ -7,7 +7,8 @@ describe Goose do
 
   it "honks" do
     goose = Goose.new
-    expect(goose.honk).to be_a String
-    expect(goose.honk.length > 0).to be_truthy
+    expect{
+      goose.honk
+    }.to_not raise_error
   end
 end

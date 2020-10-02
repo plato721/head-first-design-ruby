@@ -1,5 +1,5 @@
 class DarkwingDuck
   def quack
-    "dark... wing... duck!"
+    puts "dark... wing... duck!"
   end
 end

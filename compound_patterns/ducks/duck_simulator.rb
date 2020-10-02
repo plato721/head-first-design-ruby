@@ -9,12 +9,21 @@ class DuckSimulator
   end
 
   def perform
+    mallard_ducks = Flock.new
+    5.times { mallard_ducks.add(@duck_factory.create_mallard_duck) }
+
+    all_ducks = Flock.new
+
     ducks = ["mallard_duck", "decoy_duck", "darkwing_duck", "rubber_duck"]
+    ducks.each do |type|
+      duck = @duck_factory.send("create_#{type}".to_sym)
+      all_ducks.add(duck)
+    end
 
-    ducks.map!{ |duck_type| @duck_factory.send("create_#{duck_type}".to_sym) }
-    ducks << GooseAdapter.new(Goose.new)
+    all_ducks.add(GooseAdapter.new(Goose.new))
+    all_ducks.add(mallard_ducks)
 
-    ducks.each { |duck| puts duck.quack }
+    all_ducks.quack
 
     puts "Total quacks: #{QuackCounter.quack_count}"
   end

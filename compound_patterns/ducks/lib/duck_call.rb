@@ -1,5 +1,5 @@
 class DuckCall
   def quack
-    "Kwak"
+    puts "Kwak"
   end
 end

@@ -1,5 +1,5 @@
 class RubberDuck
   def quack
-    "Squeek!"
+    puts "Squeek!"
   end
 end

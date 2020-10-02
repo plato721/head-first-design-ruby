@@ -1,5 +1,5 @@
 class Goose
   def honk
-    "Honk!"
+    puts "Honk!"
   end
 end

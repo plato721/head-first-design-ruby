@@ -1,5 +1,5 @@
 class MallardDuck
   def quack
-    "Vanilla quack"
+    puts "Vanilla quack"
   end
 end

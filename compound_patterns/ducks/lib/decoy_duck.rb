@@ -1,5 +1,5 @@
 class DecoyDuck
   def quack
-    "<sound of the wind>"
+    puts "<sound of the wind>"
   end
 end
