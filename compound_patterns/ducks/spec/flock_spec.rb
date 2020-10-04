@@ -2,7 +2,7 @@ require './lib/flock'
 require './lib/mallard_duck'
 
 RSpec.describe Flock do
-  # it_behaves_like "a duck", Flock.new
+  it_behaves_like "a duck", Flock.new
 
   it "takes ducks" do
     flock = Flock.new
