@@ -6,22 +6,22 @@ require './lib/rubber_duck'
 
 class QuackCounterFactory
   def create_mallard_duck
-    QuackCounter.new(MallardDuck.new)
+    QuackCounter.new(duck: MallardDuck.new)
   end
 
   def create_darkwing_duck
-    QuackCounter.new(DarkwingDuck.new)
+    QuackCounter.new(duck: DarkwingDuck.new)
   end
 
   def create_rubber_duck
-    QuackCounter.new(RubberDuck.new)
+    QuackCounter.new(duck: RubberDuck.new)
   end
 
   def create_decoy_duck
-    QuackCounter.new(DecoyDuck.new)
+    QuackCounter.new(duck: DecoyDuck.new)
   end
 
   def create_duck_call
-    QuackCounter.new(DuckCall.new)
+    QuackCounter.new(duck: DuckCall.new)
   end
 end
