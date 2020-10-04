@@ -1,8 +1,10 @@
 require './lib/quack_counter'
 require './lib/mallard_duck'
 require './spec/duck_examples'
+
 describe QuackCounter do
   it_behaves_like "a duck", QuackCounter.new(duck: MallardDuck.new)
+
 
   it "has a counter" do
     # duck = MallardDuck.new

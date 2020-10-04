@@ -9,6 +9,8 @@ class DuckSimulator
   end
 
   def perform
+    zoologist = Zoologist.new
+
     mallard_ducks = Flock.new
     5.times { mallard_ducks.add(@duck_factory.create_mallard_duck) }
 
@@ -22,6 +24,8 @@ class DuckSimulator
 
     all_ducks.add(GooseAdapter.new(Goose.new))
     all_ducks.add(mallard_ducks)
+
+    all_ducks.register_observer(zoologist)
 
     all_ducks.quack
 

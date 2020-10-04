@@ -18,6 +18,10 @@ class QuackCounter
     observable.notify_observers
   end
 
+  def register_observer(observer)
+    @duck.register_observer(observer)
+  end
+
   def quack
     @@quack_count += 1
     @duck.quack
