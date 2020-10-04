@@ -4,7 +4,7 @@ class Observable
     @duck = duck
   end
 
-  def add observer
+  def register_observer observer
     observers << observer
   end
 
