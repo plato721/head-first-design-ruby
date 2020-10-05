@@ -26,4 +26,6 @@ class QuackCounter
     @@quack_count += 1
     @duck.quack
   end
+
+  def to_s; @duck.to_s; end
 end

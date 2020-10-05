@@ -24,4 +24,8 @@ class GooseAdapter
     # (not notifying observers here)
     @goose.honk
   end
+
+  def to_s
+    @goose.to_s
+  end
 end

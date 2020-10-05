@@ -14,4 +14,6 @@ class Flock
   def quack
     @ducks.each(&:quack)
   end
+
+  def to_s; self.class.to_s; end
 end

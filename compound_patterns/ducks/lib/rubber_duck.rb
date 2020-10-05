@@ -19,4 +19,6 @@ class RubberDuck
     notify_observers
     puts "Squeek!"
   end
+
+  def to_s; self.class.to_s; end
 end

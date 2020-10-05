@@ -19,4 +19,6 @@ class MallardDuck
     notify_observers
     puts "Vanilla quack"
   end
+
+  def to_s; self.class.to_s; end
 end

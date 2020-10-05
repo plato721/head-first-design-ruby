@@ -19,4 +19,6 @@ class DecoyDuck
     notify_observers
     puts "<sound of the wind>"
   end
+
+  def to_s; self.class.to_s; end
 end

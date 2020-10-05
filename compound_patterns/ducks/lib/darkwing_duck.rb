@@ -19,4 +19,6 @@ class DarkwingDuck
     notify_observers
     puts "dark... wing... duck!"
   end
+
+  def to_s; self.class.to_s; end
 end

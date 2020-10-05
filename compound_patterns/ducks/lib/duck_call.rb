@@ -19,4 +19,6 @@ class DuckCall
     notify_observers
     puts "Kwak"
   end
+
+  def to_s; self.class.to_s; end
 end
