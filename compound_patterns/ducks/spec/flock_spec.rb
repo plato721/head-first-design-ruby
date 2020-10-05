@@ -1,6 +1,7 @@
 require './lib/flock'
 require './lib/mallard_duck'
 require './spec/duck_examples'
+require './spec/basic_observable_examples'
 
 RSpec.describe Flock do
   it_behaves_like "a duck", Flock.new

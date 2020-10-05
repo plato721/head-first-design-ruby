@@ -28,7 +28,7 @@ RSpec.shared_examples "an observable duck" do |test_duck|
     expect(observable).to have_received(:notify_observers).exactly(1).times
   end
 
-  it "registers an observer with its observable when quacking" do
+  it "registers an observer with its observable" do
     observable = double(:observable, register_observer: nil)
     allow(test_duck).to receive(:observable){ observable }
     observer = double(:observer)

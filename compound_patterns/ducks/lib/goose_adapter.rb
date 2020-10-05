@@ -20,6 +20,8 @@ class GooseAdapter
   end
 
   def quack
+    # not an observable duck, because does not really quack
+    # (not notifying observers here)
     @goose.honk
   end
 end

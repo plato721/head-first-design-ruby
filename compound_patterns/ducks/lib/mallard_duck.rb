@@ -3,9 +3,8 @@ require './lib/observable'
 class MallardDuck
   attr_reader :observable
 
-  def initialize(observable: nil)
-    @observable = observable
-    @observable ||= Observable.new(self)
+  def initialize
+    @observable = Observable.new(self)
   end
 
   def notify_observers

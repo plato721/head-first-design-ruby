@@ -1,9 +1,11 @@
-require './lib/goose_adapter'
+require './spec/basic_observable_examples'
 require './spec/duck_examples'
+require './lib/goose_adapter'
 require 'ostruct'
 
 describe GooseAdapter do
   it_behaves_like "a duck", described_class.new(OpenStruct.new(honk: "anything"))
+  it_behaves_like "a basic observable", described_class.new(OpenStruct.new(honk: "anything"))
 
   it "takes a honker" do
     goose = double(:goose, honk: nil)

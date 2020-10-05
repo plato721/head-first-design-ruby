@@ -1,6 +1,6 @@
-require './spec/duck_examples'
 require './lib/quack_counter_factory'
 require './lib/quack_counter'
+require './spec/duck_examples'
 
 RSpec.describe QuackCounterFactory do
   include_context "ducks"

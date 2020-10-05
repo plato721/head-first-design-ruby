@@ -9,9 +9,9 @@ class QuackCounter
     @@quack_count
   end
 
-  def initialize(duck:, observable: nil)
+  def initialize(duck)
     @duck = duck
-    @observable = observable || Observable.new(self)
+    @observable = Observable.new(self)
   end
 
   def notify_observers
